@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat-Bubbles with CSS</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	background: azure;
+}
+h1 {
+	font-size: 2rem;
+	color: navy;
+	text-align: center;
+}
+main {
+	background: ghostwhite;
+	max-width: 850px;
+	/*height: 400px; */
+	border: 1px solid navy;
+	margin: 100px auto 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	
+}
+#chat-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#chatcircle {
+	position: relative;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	background-color: #6aaef6; /*#6bc1fa; */
+	margin-bottom: 30px;
+}
+#chatbox-orig {
+	position: absolute;
+	top: 17px;
+	left: 18px;
+	width: 25px;
+	height: 30px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	background: #fff;
+	border-right: 5px solid #fff;
+	border-bottom: 5px solid #6aaef6;
+}
+
+#chatbox-new {
+	position: absolute;
+	top: 17px;
+	left: 18px;
+	width: 30px;
+	height: 31px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background: #fff;
+}
+#chatbox-new:after {
+	content: "";
+	position:absolute;
+	top: 31px;
+	right: 0px;
+	height: 0;
+	width: 0;
+	border-top: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-left: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+}
+#smile-orig {
+	width: 20px;
+	height: 2px;
+	background: #6aaef6;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+#smile-new {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	height: 20px;
+	width: 20px;
+    border-radius: 35%;
+	border-bottom: 3px solid #6aaef6;
+	border-top: 3px solid transparent;
+}
+
+#smile-latest {
+		width: 16px;
+		height: 4px;
+		border: 2.2px solid #6aaef6;
+		border-top: 0;
+		border-radius: 0 0 25px 25px / 0 0 16px 16px;
+		position: absolute;
+		bottom: 5px;
+		left: 4.2px;
+}
+figure:first-of-type {
+	margin-left: 50px;
+}
+figcaption {
+	font-size: 1rem;
+	color: maroon;
+	font-weight: bolder;
+	
+}
+#screenshot {
+	align-self: flex-start;
+}
+img {
+	/*display: block; */
+	margin-bottom: 1.65rem;
+}
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+	#chat-container {
+		flex-wrap: wrap;
+	}
+	figure:first-of-type {
+		margin-left: 40px;
+	}
+}	
+@media (max-width: 400px) {
+	
+}
+</style>
+</head>
+<body>
+	<main>
+		<h1>Chat Bubbles Using CSS</h1>
+		
+		<div id="chat-container">
+			<figure>
+				<div>
+					<div id="chatcircle">
+						<div id="chatbox-orig">
+						  <div id="smile-orig"></div>
+						</div>
+					</div>
+					<figcaption>1st Attempt</figcaption>
+				</div>
+			</figure>
+			<figure>
+				<div>
+					<div id="chatcircle">
+						<div id="chatbox-new">
+						  <div id="smile-new"></div>
+						</div>
+					</div>
+					<figcaption>2nd Attempt</figcaption>
+				</div>
+			</figure>
+			<figure>
+				<div>
+					<div id="chatcircle">
+						<div id="chatbox-new">
+						  <div id="smile-latest"></div>
+						</div>
+					</div>
+					<figcaption>Latest Attempt</figcaption>
+				</div>
+			</figure>
+			<figure id="screenshot">
+				<div>
+					<img src="chat-bubble.png" alt="" title="From nycda website">
+					<figcaption>Screenshot<br>nycda website</figcaption>
+				</div>
+			</figure>
+		</div>
+	</main>
+</body>
+</html>
